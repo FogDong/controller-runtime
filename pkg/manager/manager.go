@@ -146,7 +146,7 @@ func New(config *rest.Config, options Options) (Manager, error) {
 		errChan:          make(chan error),
 		cache:            cache,
 		fieldIndexes:     cache,
-		client:           client.DelegatingClient{Reader: cache, Writer: writeObj, StatusClient: writeObj},
+		client:           client.DelegatingClient{Reader: writeObj, Writer: writeObj, StatusClient: writeObj},
 		recorderProvider: recorderProvider,
 	}, nil
 }
